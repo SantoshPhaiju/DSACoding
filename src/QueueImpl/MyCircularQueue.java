@@ -52,7 +52,7 @@ class CircularQueue {
     }
 
     public void printQueue() {
-        if(front == -1) {
+        if(isEmpty()) {
             System.out.println("Queue is empty");
             return;
         }
@@ -109,6 +109,5 @@ public class MyCircularQueue {
         System.out.println("dequeue " + queue.deQueue());
         System.out.println("dequeue " + queue.deQueue());
         System.out.println("dequeue " + queue.deQueue());
-
     }
 }
