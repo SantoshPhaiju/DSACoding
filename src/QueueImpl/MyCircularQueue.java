@@ -19,7 +19,7 @@ class CircularQueue {
     }
 
     public boolean isEmpty() {
-        return front == -1;
+        return size == 0;
     }
 
     public int peek() {
@@ -103,5 +103,12 @@ public class MyCircularQueue {
         queue.enQueue(12);
 
         queue.printQueue();
+        System.out.println("dequeue " + queue.deQueue());
+        System.out.println("dequeue " + queue.deQueue());
+        System.out.println("dequeue " + queue.deQueue());
+        System.out.println("dequeue " + queue.deQueue());
+        System.out.println("dequeue " + queue.deQueue());
+        System.out.println("dequeue " + queue.deQueue());
+
     }
 }
