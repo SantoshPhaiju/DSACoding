@@ -57,11 +57,35 @@ class SinglyCircularLinkedList {
         }
         if (size == 1) {
             head = null;
+            tail = null;
             size--;
             return;
         }
         head = head.next;
         tail.next = head;
+        size--;
+    }
+
+    public void deleteAtEnd() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        if (size == 1) {
+            head = null;
+            tail = null;
+            size--;
+            return;
+        }
+
+        Node2 current = head;
+        Node2 prev = null;
+        while (current.next != head) {
+            prev = current;
+            current = current.next;
+        }
+        prev.next = head;
+        tail = prev;
         size--;
     }
 
@@ -91,7 +115,10 @@ public class CircularSinglyLinkedList {
         list.insertAtFront(5);
         list.insertAtFront(6);
 
+
         list.deleteAtFront();
+        list.deleteAtEnd();
+//        list.deleteAtEnd();
 
         list.printList();
 
