@@ -1,24 +1,27 @@
 package LinkedList.CircularLinkedList;
 
 
-class Node {
+class Node2 {
     int data;
-    Node next;
+    Node2 next;
 
-    public Node(int data) {
+    public Node2(int data) {
         this.data = data;
         this.next = null;
     }
 }
 
 class SinglyCircularLinkedList {
-    Node head;
-    Node tail;
+    Node2 head;
+    Node2 tail;
+    public int size;
 
-    public SinglyCircularLinkedList() {}
+    public SinglyCircularLinkedList() {
+        this.size = 0;
+    }
 
     public void insertAtEnd(int data) {
-        Node newNode = new Node(data);
+        Node2 newNode = new Node2(data);
         if (head == null) {
             head = newNode;
             tail = newNode;
@@ -28,6 +31,7 @@ class SinglyCircularLinkedList {
             tail = newNode;
             newNode.next = head;
         }
+        size++;
     }
 
 
@@ -35,6 +39,9 @@ class SinglyCircularLinkedList {
 
 public class CircularSinglyLinkedList {
     public static void main(String[] args) {
+        SinglyCircularLinkedList list = new SinglyCircularLinkedList();
+        list.insertAtEnd(1);
+        list.insertAtEnd(2);
 
     }
 }
