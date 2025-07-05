@@ -2,7 +2,7 @@ package LinkedList;
 
 class Node {
     int data;
-    Node next;
+    LinkedList.CircularLinkedList.Node next;
 
     public Node(int data) {
         this.data = data;
@@ -11,23 +11,23 @@ class Node {
 }
 
 class SinglyLinkedList {
-    Node head;
+    LinkedList.CircularLinkedList.Node head;
 
     public SinglyLinkedList() {}
 
     public void addToBeginning(int data) {
-        Node newNode = new Node(data);
+        LinkedList.CircularLinkedList.Node newNode = new LinkedList.CircularLinkedList.Node(data);
         newNode.next = head;
         head = newNode;
     }
 
     public void addToEnd(int data) {
-        Node newNode = new Node(data);
+        LinkedList.CircularLinkedList.Node newNode = new LinkedList.CircularLinkedList.Node(data);
         if (head == null) {
             head = newNode;
             return;
         }
-        Node temp = head;
+        LinkedList.CircularLinkedList.Node temp = head;
         while (temp.next != null) {
             temp = temp.next;
         }
@@ -35,7 +35,7 @@ class SinglyLinkedList {
     }
 
     public void printList() {
-        Node temp = head;
+        LinkedList.CircularLinkedList.Node temp = head;
         while (temp != null) {
             System.out.print(temp.data + " -> ");
             temp = temp.next;
