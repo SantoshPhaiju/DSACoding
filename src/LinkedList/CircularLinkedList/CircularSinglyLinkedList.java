@@ -50,6 +50,21 @@ class SinglyCircularLinkedList {
 
     }
 
+    public void deleteAtFront() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        if (size == 1) {
+            head = null;
+            size--;
+            return;
+        }
+        head = head.next;
+        tail.next = head;
+        size--;
+    }
+
     public void printList() {
         Node2 temp = head;
 
@@ -75,6 +90,8 @@ public class CircularSinglyLinkedList {
 
         list.insertAtFront(5);
         list.insertAtFront(6);
+
+        list.deleteAtFront();
 
         list.printList();
 
